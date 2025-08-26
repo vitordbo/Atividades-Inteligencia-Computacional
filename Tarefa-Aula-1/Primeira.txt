@@ -1,0 +1,28 @@
+# Questão 2.7 capitulo 2 
+
+2.7 Escreva programas de agente de pseudocódigo para os agentes baseados em objetivos e em utilidade.
+Todos os exercícios a seguir estão relacionados à implementação de ambientes e agentes para o
+mundo de aspirador de pó
+
+Agente baseado em objetivos: 
+
+// manter um modelo minimo de estado e procurar ações que vão aproximar do objeito de limar as 2 salas
+Se a sala atual está suja:
+    Ação = Aspirar
+Senão se ainda existe alguma sala suja:
+    Ação = Mover para outra sala
+Senão:
+    Ação = Não fazer nada
+
+----------------------------------------------
+Agente baseado em utilidade
+
+// escolher a ação que maximiza a utilidade
+Se a sala atual está suja:
+    Ação = Aspirar (maior utilidade)
+Senão:
+    Se mover traz chance de encontrar sujeira:
+        Ação = Mover
+    Senão:
+        Ação = Não fazer nada
+
