@@ -1,0 +1,47 @@
+tarefa 2 => Aplicar o algoritmo da Fig. 5.7 (6.7) à árvore da Fig. 5.5 (6.5)
+
+Algoritmo Alfa beta => minimax com podas 
+
+começando pela 
+
+a) da figura 5.5:
+1- raiz max com alfa = -∞ e beta = +∞
+2- visita o primeiro filho e depois o priemeiro neto e retorna o valor 3
+3 - min fica com min(+∞, 3) = 3 => [-∞, 3] 
+
+b) 
+1- O nó min explora seu segundo filho, uma folha com valor 12
+2 - valor temporario é atualizado: v = min(3, 12) = 3
+
+c)
+1- finaliza o primeiro filho, folha com valor 8 => v = min(3,8) = 3
+2- nó min explorou todos os filhos e retorna para a raiz 
+3- atualização na raiz max => recebe o valor 3 => max(-∞, 3) = 3
+4 - raiz agora sabe que pode garantir pelo menos 3 de pontuação
+
+d) (aqui a poda)
+1- raiz visita o segundo filho com min alfa = 3 e beta = +∞
+2- min visita a primeira folha com valor 2 e min atualiza seu valor => min(+∞, 2) = 2
+3- nó min verifica a condição de poda: v <= alfa 
+4- como v = 2 e alfa = 3, a condição é verdadeira e a poda acontece => retorna o valor 2
+
+Inutil explorar os outros tendo uma jogada melhor garantida
+
+e)
+1- raiz visita o terceiro filho e recebeu 2 do ramo podado => max(3, 2) = 3 
+2- raiz explora teceiro filho passando alfa = 3 e beta = +∞
+3- min visita sua folha de valor 14 e atualiza v = min(+∞, 14) = 14 e beta = min(+∞, 14) 
+4- intervalo agora é [3,14]
+
+f)
+1- min explora a segunda folha com valor 5 e atualiza para min(14, 5) = 5
+2- Intervalo agora é [3, 5]
+3- nó explora ultima folha de valor 2 e atualiza noamente => v = min(5, 2) = 2
+4 - aqui poderia podar de novo (como não tem mais filhos, não vai podar)  
+
+conclusão:
+raiz max recebeu do primeiro filho: 3, do segundo e terceiro: 2
+a decisão é por max(3, 2, 2) = 3
+
+chega na mesma conclusão que o minimax só que de forma mais inteligente poupando a exploração de nós que não vão ser uteis,
+me lebrou bastante o algoritmo A* da materia de grafos
