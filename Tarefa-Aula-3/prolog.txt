@@ -1,0 +1,37 @@
+Prolog (PROgramming in LOGic) é uma linguagem declarativa.
+Isso significa que você não escreve "como" o computador deve fazer (passo a passo), mas sim o que é verdade no seu mundo.
+
+O Prolog usa:
+Fatos: coisas que são sempre verdadeiras.
+Regras: definições baseadas em condições.
+Consultas: perguntas que você faz sobre o mundo.
+
+Exemplo mapa:
+wumpus(2,3).
+poco(3,1).
+ouro(4,4).
+
+Aqui: "Existe um Wumpus na posição (2,3), existe um poço em (3,1), e ouro em (4,4)".
+
+Você escreve fatos e regras, não algoritmos passo a passo e faz consultas (?- ...) e o Prolog usa inferência lógica para encontrar respostas.
+
+teste: 
+na pasta abre o terminal: swipl
+depois: ['mundo_wumpus.pl'].
+saida : true
+
+depois: brilho(X,Y).
+wumpus(X,Y).
+poco(X,Y).
+
+percepções: 
+fedor(2,2).
+brisa(2,2).
+percepcao(2,2,P).
+
+findall((X,Y), seguro(X,Y), Lista).
+
+- - - - 
+- - w -
+p - - -
+- - - o 
