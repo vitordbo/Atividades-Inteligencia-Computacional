@@ -8,8 +8,8 @@ NOME_DO_ARQUIVO_CSV = 'dataset_TSMC2014_NYC.csv'
 
 # --- CONFIGURAÇÃO DE VELOCIDADE ---
 # True = Carrega só 10.000 linhas 
-# False = Carrega tudo (Para o resultado final do artigo)
-MODO_TESTE_RAPIDO = True 
+# False = Carrega tudo 
+MODO_TESTE_RAPIDO = False 
 
 COLUNAS_CSV = {
     'CATEGORIA': 'venueCategory', 
@@ -36,7 +36,7 @@ def carregar_dados_reais(caminho_arquivo):
             print(">>> MODO RÁPIDO ATIVADO: Carregando apenas 10.000 linhas para teste <<<")
             df = pd.read_csv(caminho_arquivo, nrows=10000) # LÊ SÓ O COMEÇO
         else:
-            print(">>> MODO COMPLETO: Carregando base inteira (Isso vai demorar) <<<")
+            print(">>> MODO COMPLETO: Carregando base inteira <<<")
             df = pd.read_csv(caminho_arquivo)
             
         print(f"Sucesso! Carregado: {len(df)} linhas.")
